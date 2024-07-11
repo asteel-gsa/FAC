@@ -40,7 +40,7 @@
             run: docker run aquasec/trivy:latest  image --timeout 5m --scanners vuln --exit-code 1 --severity CRITICAL,HIGH  ${{ matrix.image.name }}
 
           - name: Login to GitHub Container Registry
-            uses: docker/login-action@v2
+            uses: docker/login-action@v3
             with:
               registry: ghcr.io
               username: ${{ github.repository_owner }}
